@@ -12,6 +12,12 @@ class AppTest {
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
     }
 
-    
+    Calculator calculator = new Calculator(2d,2.5d);
+
+    @Test
+    void testAddSuccess() {
+        double result = calculator.adding();
+        assertEquals(4.5d,result);
+    }
 
 }
