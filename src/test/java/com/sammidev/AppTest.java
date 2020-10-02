@@ -12,12 +12,27 @@ class AppTest {
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
     }
 
-    Calculator calculator = new Calculator(2d,2.5d);
+    Calculator calculator = new Calculator(6d,2d);
+    Calculator calculator2 = new Calculator(2d,0);
 
     @Test
     void testAddSuccess() {
         double result = calculator.adding();
-        assertEquals(4.5d,result);
+        assertEquals(8d,result);
+    }
+
+    @Test
+    void testDivideSuccess() {
+        double result = calculator.division();
+        assertEquals(3d,result);
+    }
+
+    @Test
+    void testDividedError() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            calculator2.division();
+        });
+        assertEquals(exception.getMessage(), "can't divide by zero");
     }
 
 }

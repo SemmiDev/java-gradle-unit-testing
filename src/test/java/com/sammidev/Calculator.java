@@ -20,6 +20,9 @@ public class Calculator {
         return this.number1 * this.number2;
     }
     public double division() {
+        if (number2 == 0) {
+            throw new IllegalArgumentException("can't divide by zero");
+        }
         return this.number1 / this.number2;
     }
 }
