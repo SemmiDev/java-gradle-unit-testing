@@ -5,6 +5,7 @@ package com.sammidev;
 
 import com.sammidev.generator.SimpleNameGenerator;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.condition.*;
 import org.opentest4j.TestAbortedException;
 
 import javax.swing.plaf.synth.SynthTextAreaUI;
@@ -89,4 +90,35 @@ class AppTest {
     }
 
 
+    @Test
+    @EnabledOnOs({OS.WINDOWS, OS.LINUX})
+    void onlyRunOnWinAndLinux() {
+        System.out.println("WIN AND LINUX");
+    }
+    @Test
+    @EnabledOnOs(OS.MAC)
+    void onlyRunOnMac() {
+        System.out.println("MAC OS");
+    }
+
+    @Test
+    @EnabledOnJre(value = JRE.JAVA_11)
+    void onlyRunJava11() {
+        System.out.println("11");
+    }
+
+    @Test
+    @DisabledOnJre(JRE.JAVA_15)
+    void disableRunOnJava15() {
+        // put your unit test
+    }
+
+    // RANGE
+    @Test
+    @EnabledForJreRange(min = JRE.JAVA_8, max = JRE.JAVA_15)
+    void onlyRunOnRange8until15() {
+        System.out.println("8 ->> 15");
+    }
+
+    
 }
