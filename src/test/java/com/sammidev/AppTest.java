@@ -8,12 +8,6 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.condition.*;
 import org.opentest4j.TestAbortedException;
 
-import javax.swing.plaf.synth.SynthTextAreaUI;
-import javax.xml.namespace.QName;
-
-import java.util.Map;
-import java.util.Properties;
-
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
@@ -143,9 +137,11 @@ class AppTest {
         // bla bla bla
     }
 
+
     @Test
     @EnabledIfEnvironmentVariable(named = "PROFILE", matches = "DEV")
     void DisabledOnlyName() {
         // bla bla bla
     }
+
 }
