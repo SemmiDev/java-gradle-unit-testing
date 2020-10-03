@@ -8,11 +8,8 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.condition.*;
 import org.opentest4j.TestAbortedException;
 
-import javax.swing.plaf.synth.SynthTextAreaUI;
-import javax.xml.namespace.QName;
-
-import java.util.Map;
-import java.util.Properties;
+import java.beans.BeanInfo;
+import java.beans.BeanProperty;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
