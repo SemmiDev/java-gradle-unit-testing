@@ -38,8 +38,9 @@ application {
 
 test {
     // Use junit platform for unit tests
-    useJUnitPlatform{
-     includeTags 'integ-a', 'integ-b'
-        excludeTags 'integ-c'
-    }
+    useJUnitPlatform()
+//    useJUnitPlatform{
+//     includeTags 'integ-a', 'integ-b'
+//        excludeTags 'integ-c'
+//    }
 }
