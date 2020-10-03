@@ -4,18 +4,30 @@
 package com.sammidev;
 
 import com.sammidev.generator.SimpleNameGenerator;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.DisplayNameGeneration;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayNameGeneration(SimpleNameGenerator.class)
 class AppTest {
+
     @Test void appHasAGreeting() {
         App classUnderTest = new App();
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
     }
+
+    // BEFORE EACH AND AFTER EACH WILL RUN EACH @TEST
+    @BeforeEach
+    void beforeEach() {
+        System.out.println("BEFORE UNIT TEST");
+    }
+
+    @AfterEach
+    void afterEach() {
+        System.out.println("AFTER UNIT TEST");
+    }
+
+
 
     Calculator calculator = new Calculator(6d,2d);
     Calculator calculator2 = new Calculator(2d,0);
@@ -47,6 +59,8 @@ class AppTest {
         double result = calculator.substraction();
         assertEquals(4d,result);
     }
+
+
 
 
 
