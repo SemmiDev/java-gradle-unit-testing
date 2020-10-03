@@ -3,6 +3,7 @@
  */
 package com.sammidev;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -34,5 +35,13 @@ class AppTest {
         });
         assertEquals(exception.getMessage(), "can't divide by zero");
     }
+
+    @Test
+    @DisplayName("TEST SUBSTRACTION")
+    void testSubstractSuccess() {
+        double result = calculator.substraction();
+        assertEquals(4d,result);
+    }
+
 
 }
