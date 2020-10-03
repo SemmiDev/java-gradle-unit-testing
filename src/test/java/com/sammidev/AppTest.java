@@ -4,6 +4,7 @@
 package com.sammidev;
 
 import com.sammidev.generator.SimpleNameGenerator;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.Test;
@@ -26,6 +27,7 @@ class AppTest {
     }
 
     @Test
+    @Disabled("Coming Soon")
     void testDivideSuccess() {
         double result = calculator.division();
         assertEquals(3d,result);
@@ -45,6 +47,8 @@ class AppTest {
         double result = calculator.substraction();
         assertEquals(4d,result);
     }
+
+
 
 
 
