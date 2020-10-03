@@ -5,6 +5,7 @@ package com.sammidev;
 
 import com.sammidev.generator.SimpleNameGenerator;
 import org.junit.jupiter.api.*;
+import org.opentest4j.TestAbortedException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -27,7 +28,16 @@ class AppTest {
         System.out.println("AFTER UNIT TEST");
     }
 
+    // BEFORE AND AFTER ALL JUST RUN ONCE WHEN APP START AND END
+    @BeforeAll
+    static void beforeAll() {
+        System.out.println("BEFORE ALL");
+    }
 
+    @AfterAll
+    static void afterAll() {
+        System.out.println("AFTER ALL");
+    }
 
     Calculator calculator = new Calculator(6d,2d);
     Calculator calculator2 = new Calculator(2d,0);
@@ -60,8 +70,13 @@ class AppTest {
         assertEquals(4d,result);
     }
 
-
-
+    @Test
+    void testAborted() {
+        String profileName = System.getenv("NAME");
+        if ("SAMMIDEV" != profileName) {
+            throw new TestAbortedException();
+        }
+    }
 
 
 
