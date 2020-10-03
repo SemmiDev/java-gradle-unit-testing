@@ -1,28 +1,42 @@
 package com.sammidev;
 
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.MethodOrderer.*;
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @TestMethodOrder(Alphanumeric.class)
 public class Alpha {
+    int a = 0;
+
+    @BeforeAll
+    void BisaTidakHarusStatic() {
+        System.out.println("before");
+    }
+    @AfterAll
+    void BisaTidakHarusStaticc() {
+        System.out.println("after");
+    }
 
     @Test
     void testA() {
+        a++;
+        System.out.println(a);
         assertEquals(1+1, 2);
     }
 
     @Test
     void testB() {
+        a++;
+        System.out.println(a);
         assertEquals(1+1, 2);
     }
 
     @Test
     void testC() {
+        a++;
+        System.out.println(a);
         assertEquals(1+1, 2);
     }
 }
