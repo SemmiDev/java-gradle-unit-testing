@@ -10,6 +10,9 @@ import org.opentest4j.TestAbortedException;
 
 import javax.swing.plaf.synth.SynthTextAreaUI;
 
+import java.util.Map;
+import java.util.Properties;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
@@ -120,5 +123,9 @@ class AppTest {
         System.out.println("8 ->> 15");
     }
 
-    
+    @Test
+    @EnabledIfSystemProperty(named = "java.vendor", matches = "Oracle Corporation")
+    void testSystemProperties() {
+        System.out.println("COOL");
+    }
 }
