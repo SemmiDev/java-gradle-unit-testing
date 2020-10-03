@@ -7,7 +7,10 @@ import com.sammidev.generator.SimpleNameGenerator;
 import org.junit.jupiter.api.*;
 import org.opentest4j.TestAbortedException;
 
+import javax.swing.plaf.synth.SynthTextAreaUI;
+
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 @DisplayNameGeneration(SimpleNameGenerator.class)
 class AppTest {
@@ -78,8 +81,12 @@ class AppTest {
         }
     }
 
-
-
+    // LEBIH MUDAH MENGGUNAKAN ASSUMPTION
+    @Test
+    void testAssumption() {
+        assumeTrue("SAMMIDEV" == System.getenv("NAME"));
+        System.out.println("WILL EXECITE IF ASSUME WAS TRUE");
+    }
 
 
 }
