@@ -137,4 +137,15 @@ class AppTest {
         });
     }
 
+    @Test
+    @EnabledIfEnvironmentVariable(named = "NAME", matches = "SAM")
+    void enabledOnlyName() {
+        // bla bla bla
+    }
+
+    @Test
+    @EnabledIfEnvironmentVariable(named = "PROFILE", matches = "DEV")
+    void DisabledOnlyName() {
+        // bla bla bla
+    }
 }
